@@ -10,6 +10,56 @@ let menuItems = [
   'Log Out'
 ];
 
+function menuMaker (menuItem) {
+
+  const menu = document.createElement("div") ; 
+  const ul = document.createElement("ul") ;
+  const liOne = document.createElement("li") ;
+  const litwo =document.createElement("li") ;
+  const lithree = document.createElement("li") ;
+  const lifour =document.createElement("li") ;
+  const lifive = document.createElement("li") ;
+  const lisix = document.createElement("li") ;
+
+  menu.classList.add("menu") ; 
+
+  menu.appendChild(ul) ;
+  ul.appendChild(liOne) ; 
+  ul.appendChild(litwo) ;
+  ul.appendChild(lithree) ;
+  ul.appendChild(lifour);
+  ul.appendChild(lifive);
+  ul.appendChild(lisix) ; 
+
+  const menuButton = document.querySelector(".menu-button") ; 
+  
+  menuButton.addEventListener("click"  , ()=>{
+    menu.classList.toggle("menu--open") ; 
+    console.log("click") ; 
+  }) ; 
+
+  liOne.textContent = menuItem[0] ;
+  litwo.textContent = menuItem[1] ;
+  lithree.textContent = menuItem[2] ;
+  lifour.textContent = menuItem[3] ;
+  lifive.textContent = menuItem[4] ; 
+  lisix.textContent = menuItem[5] ; 
+
+  return menu ; 
+
+}
+
+const header = document.querySelector(".header") ; 
+
+header.appendChild(menuMaker(menuItems)) ;
+
+// const items = menuItems.map ( items => {
+//   return menuMaker(items) ; 
+// }) ;
+
+// console.log(items) ; 
+console.log(header) ; 
+console.log(menuMaker(menuItems)) ; 
 /*
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
